@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import ResultCard from "../components/ResultCard.jsx";
+import { Link } from "react-router-dom";
 
 function Anime() {
 
@@ -27,20 +28,21 @@ function Anime() {
 
   return (
     <main className="anime-page">
-      <h1 className="anime-page__title">Anime Search</h1>
+      <Link className="home-page-link" to="/">Back to Home</Link>
+      <h1 className="anime-page-title">Anime Search</h1>
 
       <form className="search-form" onSubmit={handleSubmit}>
-        <label className="search-form__label" htmlFor="anime-search">
+        <label htmlFor="anime-search">
           Search for anime:
         </label>
         <input
-          className="search-form__input"
+          className="search-input"
           type="text"
           id="anime-search"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <button className="search-form__button" type="submit">Search</button>
+        <button className="search-submit-btn" type="submit">Search</button>
       </form>
       {searchTerm && (
         <p className="search-message">Searching for: {searchTerm}</p>
