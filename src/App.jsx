@@ -1,13 +1,17 @@
-
-
 import './App.css'
+import Home from "./pages/Home.jsx";
+import Anime from "./pages/Anime.jsx";
+import AnimeDetails from "./pages/AnimeDetails.jsx";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   
   return (
-    <>
-      <h1> Hello World</h1>
-    </>
+     <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/anime" element={<Anime />} />
+        <Route path="/anime/:id" element={<AnimeDetails />} />
+     </Routes>
   )
 }
 
